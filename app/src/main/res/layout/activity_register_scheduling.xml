@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/atPatientName"
+            android:id="@+id/etPatientName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/patientName"
@@ -40,11 +40,16 @@
         app:layout_constraintTop_toBottomOf="@+id/tilPatientName">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/atProcedure"
+            android:id="@+id/etProcedure"
             android:layout_width="match_parent"
             android:layout_height="125dp"
+            android:lines="8"
+            android:minLines="6"
+            android:gravity="top|left"
+            android:maxLines="10"
+            android:inputType="textMultiLine"
             android:hint="@string/descriptinScheduling"
-            android:inputType="text" />
+           />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -58,11 +63,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tilProcedure">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/atDate"
+            android:id="@+id/etDate"
             android:layout_width="194dp"
             android:layout_height="wrap_content"
             android:hint="@string/dateScheduling"
-            android:inputType="datetime" />
+            android:inputType="text"
+            android:focusable="false"
+            android:clickable="true"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 

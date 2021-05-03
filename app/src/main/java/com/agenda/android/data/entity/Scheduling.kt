@@ -6,12 +6,17 @@ import androidx.room.PrimaryKey
 
 @Entity(tableName = "scheduling")
 data class Scheduling(
-        val patientName: String,
-        val consultationDate: String,
-        val state: String,
-        val procedureDescription: String,
-){
-
     @PrimaryKey(autoGenerate = true)
-    var id: Int? = null
-}
+    var id: Int? = null,
+    val patientName: String,
+    val consultationDate: String,
+    val state: Int,
+    val procedureDescription: String,
+)
+
+
+
+
+
+
+

@@ -10,9 +10,11 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.agenda.android.R
 import com.agenda.android.databinding.ActivityListSchedulingBinding
+import com.agenda.android.dto.scheduling.SchedulingDto
 import com.agenda.android.ui.list.adapter.ListSchedulingAdapter
 import com.agenda.android.ui.list.viewmodel.ListSchedulingViewModel
 import com.agenda.android.ui.register.RegisterSchedulingActivity
+import com.agenda.android.ui.scheduling.contract.SchedulingContract
 
 class ListSchedulingActivity : AppCompatActivity() {
 
@@ -64,6 +66,7 @@ class ListSchedulingActivity : AppCompatActivity() {
 
     private fun setupList() {
         adapter = ListSchedulingAdapter()
+        adapter.onItemSelected = ::onSchedulingDtoSelected
 
         binding.rvScheduling.adapter = adapter
         binding.rvScheduling.layoutManager = LinearLayoutManager(this)
@@ -73,5 +76,16 @@ class ListSchedulingActivity : AppCompatActivity() {
             )
         )
     }
+
+    private fun onSchedulingDtoSelected(medicine: SchedulingDto) {
+        schedulingResult.launch(medicine)
+    }
+
+
+    private val schedulingResult = registerForActivityResult(SchedulingContract()) {
+        viewModel.list()
+    }
+
+
 
 }

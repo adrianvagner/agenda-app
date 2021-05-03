@@ -7,6 +7,6 @@ class SchedulingDto(
     val id: Int,
     val patientName: String,
     val consultationDate: String,
-    val state: String,
+    var state: Int,
     val procedureDescription: String,
 ) : Serializable

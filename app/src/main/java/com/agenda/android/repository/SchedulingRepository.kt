@@ -13,6 +13,7 @@ class SchedulingRepository {
     suspend fun save(scheduling: RegisterSchedulingDto) {
 
         val entity = Scheduling(
+            null,
             scheduling.patientName,
             scheduling.consultationDate,
             scheduling.state,
@@ -22,7 +23,25 @@ class SchedulingRepository {
 
     }
 
-    suspend fun findAll(): List<SchedulingDto>{
+    suspend fun findById(schedulingId: Int): SchedulingDto {
+        val scheduling = dao.findById(schedulingId)
+
+        return SchedulingDto(
+            scheduling.id ?: 0,
+            scheduling.patientName,
+            scheduling.consultationDate,
+            scheduling.state,
+            scheduling.procedureDescription
+        )
+    }
+
+
+    suspend fun update(scheduling: Scheduling) {
+        dao.update(scheduling);
+    }
+
+
+    suspend fun findAll(): List<SchedulingDto> {
         val schedules = dao.findAll();
 
         return schedules.map { scheduling ->

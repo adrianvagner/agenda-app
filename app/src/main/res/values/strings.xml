@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Agenda</string>
+
+
+    <string name="add">Novo</string>
+    <string name="save">Salvar</string>
+
+
+    <string name="patient">Paciente</string>
+
+    <string name="registerScheduling">Agendamento</string>
+
+    <string name="descriptinScheduling">Descrição procedimento</string>
+
+    <string name="dateScheduling">Data agendamento</string>
+
+
+    <string name="patientName">Nome do Paciente</string>
+
+    <string name="messageNameRequired">Nome do Paciente é obrigatório!</string>
+
+    <string name="messageRequired">Obrigatório!</string>
+
+    <string name="patientScheduled">Agendado</string>
+    <string name="patientOnTime">Aguardando</string>
+    <string name="patientLate">Atrasado</string>
+
+</resources>

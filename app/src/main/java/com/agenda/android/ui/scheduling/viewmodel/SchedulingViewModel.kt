@@ -16,12 +16,11 @@ class SchedulingViewModel : ViewModel() {
     fun update(schedulingDto: SchedulingDto) {
 
         var scheduling = Scheduling(
-            schedulingDto.id,
             schedulingDto.patientName,
             schedulingDto.consultationDate,
             schedulingDto.state,
             schedulingDto.procedureDescription,
-        )
+            schedulingDto.id)
 
         viewModelScope.launch {
             repository.update(scheduling);

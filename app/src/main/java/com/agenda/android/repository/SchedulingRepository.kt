@@ -13,7 +13,6 @@ class SchedulingRepository {
     suspend fun save(scheduling: RegisterSchedulingDto) {
 
         val entity = Scheduling(
-            null,
             scheduling.patientName,
             scheduling.consultationDate,
             scheduling.state,
